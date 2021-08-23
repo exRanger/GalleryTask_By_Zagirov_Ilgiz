@@ -1,0 +1,83 @@
+$sizes: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
+
+@function getPreviousSize($currentSize) {
+  $keys: map-keys($sizes);
+  $index: index($keys, $currentSize)-1;
+  $value: map-values($sizes);
+  @return nth($value, $index);
+} 
+
+
+@mixin media($minmax, $media) {
+    @each $size, $resolution in $sizes {
+      @if $media == $size {
+        @if ($minmax == "min") {
+          @media only screen and (min-width: $resolution) {
+            @content;
+          }
+        } @else {
+          @if (index(map-keys($sizes), $media) > 1) {
+            @media only screen and (min-width: getPreviousSize($media)+1) and (max-width: $resolution) {
+              @content;
+            }
+          } @else {
+            @media only screen and (max-width: $resolution) {
+              @content;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include media("min", "xs") {
+     
+    [class*="gallery__item-"] {
+       
+      flex: 1 0 30px;
+      
+    }
+    [class*="gallery__item-0"] {
+      flex: 1 0 30px;
+       
+    } 
+  }
+  @include media("min", "sm") {
+     
+    [class*="gallery__item-"] {
+      flex: 1 0 80px;
+     
+    }
+     
+  }
+   
+  @include media("min", "md") {
+    [class$="gallery__item-1"] {
+      flex: 1 0 200px;
+    }
+    [class$="gallery__item-"], [class$="item-0"], [class$="item-6"],[class$="item-9"]   {
+      flex: 4 1 300px;
+     
+    }
+  }
+  
+  @include media("min", "lg") {
+    [class*="gallery__item-"] {
+      flex: 1 0 150px;
+       
+    }
+    [class$="item-1"], [class$="item0"], [class$="item4"], [class*="item-6item-8item-9"] {
+      flex: 1 0 220px;
+    }
+  }
+
+  @include media("min", "xl") {
+    
+
+    [class*="gallery__item-"] {
+      flex: 1 0 150px;
+      
+    }
+    [class$="item-1"], [class$="item-0"], [class$="item-4"]  {
+      flex: 1 0 350px;
+    }
+  }
