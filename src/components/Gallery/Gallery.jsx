@@ -15,7 +15,7 @@ export const Gallery = (orops) => {
     
     let stateLoading = {loading, setLoading}
   
-    let dragStartHandler = (e, item) => {} // not using
+    let dragStartHandler = (e, item) => {} 
       let  dragEndHandler = (e, item) => {
       e.preventDefault() 
       e.target.style.border = 'none'
