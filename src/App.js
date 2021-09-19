@@ -8,7 +8,7 @@ function App() {
   return (
     <div className='wrapper'>
         <div className="content">
-          <h1>Task from Ecwid.</h1>
+          <h1>Simple react gallery</h1>
           <Gallery/>
         </div>
     </div>
