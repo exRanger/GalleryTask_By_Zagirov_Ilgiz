@@ -4,8 +4,6 @@ import { Gallery } from './components/Gallery/Gallery'
 import './scss/App.scss'
 
  
- 
-
 function App() {
   return (
     <div className='wrapper'>
