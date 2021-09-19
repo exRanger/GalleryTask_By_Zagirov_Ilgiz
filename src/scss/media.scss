@@ -47,9 +47,8 @@ $sizes: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
     [class$="gallery__item-1"] {
       flex: 1 0 200px;
     }
-    [class$="gallery__item-"], [class$="item-0"], [class$="item-6"],[class$="item-9"]   {
+    [class$="gallery__item-"], [class$="item-0"], [class$="item-6"],[class$="item-9"]{
       flex: 4 1 300px;
-     
     }
   }
   
@@ -64,8 +63,6 @@ $sizes: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
   }
 
   @include media("min", "xl") {
-    
-
     [class*="gallery__item-"] {
       flex: 1 0 150px;
       
