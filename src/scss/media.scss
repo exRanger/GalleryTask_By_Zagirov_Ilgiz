@@ -55,7 +55,6 @@ $sizes: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
   @include media("min", "lg") {
     [class*="gallery__item-"] {
       flex: 1 0 150px;
-       
     }
     [class$="item-1"], [class$="item0"], [class$="item4"], [class*="item-6item-8item-9"] {
       flex: 1 0 220px;
