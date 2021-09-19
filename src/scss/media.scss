@@ -29,6 +29,7 @@ $sizes: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
       }
     }
   }
+
   @include media("min", "xs") {
     [class*="gallery__item-"] {
       flex: 1 0 30px;
