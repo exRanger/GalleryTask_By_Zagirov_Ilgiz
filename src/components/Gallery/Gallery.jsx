@@ -46,25 +46,25 @@ export const Gallery = (orops) => {
 
     return (
         <div 
-        className='gallery'
-        ref={galleryRef}
-        onDrop={dropHandler}
-        draggable={true}
-        onDragEnd={dragEndHandler}
-        onDragLeave={dragLeaveHandler} 
-        onDragOver={dragOverHandler}
+            className='gallery'
+            ref={galleryRef}
+            onDrop={dropHandler}
+            draggable={true}
+            onDragEnd={dragEndHandler}
+            onDragLeave={dragLeaveHandler} 
+            onDragOver={dragOverHandler}
         >
             <div className='container'>
               {
                 !loading ?  images.length > 0 ?  // if loading  state exist  -> return's gallery of async collection from side server
                 <GalleryCollection
-                className="gallery__collection"  
-                stateLoading={stateLoading} 
-                images={images} 
-                loading
-                removeItemHandler={removeItemHandler} 
+                    className="gallery__collection"  
+                    stateLoading={stateLoading} 
+                    images={images} 
+                    loading
+                    removeItemHandler={removeItemHandler} 
                /> 
-                // else                                                              <-- there's using `?` operator 
+                // else <-- there's using `?` operator 
                 :<GalleryUpploadButton className="gallery__upload-button" setLoading={setLoading} setImages={setImages}/> 
                 // else if
                 : <Loader className="gallery__loader"/>
